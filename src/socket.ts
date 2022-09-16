@@ -56,7 +56,7 @@ function socket({ io }: { io: Server }) {
       }
     );
 
-    // When a user joins a room
+    // When a user joins a room event
     socket.on(EVENTS.CLIENT.JOIN_ROOM, (roomId) => {
       socket.join(roomId);
       socket.emit(EVENTS.SERVER.JOINED_ROOM, roomId);
